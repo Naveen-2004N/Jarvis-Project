@@ -19,14 +19,14 @@
 
 // Siri Wave
 let siriWave = new SiriWave({
-    container: document.getElementById("siri-container"),
-    width: 800,
-    height: 200,
-    style:"ios9",
-    speed:"0.15",
-    amplitude:"1",
-    autostart:true
-  });
+  container: document.getElementById("siri-container"),
+  width: 800,
+  height: 200,
+  style: "ios9",
+  speed: "0.15",
+  amplitude: "1",
+  autostart: true
+});
 
 // Siri message animation
 (function animateMainText() {
@@ -47,3 +47,14 @@ let siriWave = new SiriWave({
   toggle();
   setInterval(toggle, 2000); // loop
 })();
+
+// Mic button click function
+let micbutton = document.querySelector('#MicBtn')
+let jarvisHome = document.querySelector('#Oval')
+let siriHome = document.querySelector('#SiriWave')
+
+micbutton.addEventListener("click",(e) => {
+  // eel.playAssistantSound();
+  jarvisHome.setAttribute("hidden", "hidden")
+  siriHome.style.opacity = 1;
+})
