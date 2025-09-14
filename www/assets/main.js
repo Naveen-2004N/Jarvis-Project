@@ -53,8 +53,12 @@ let micbutton = document.querySelector('#MicBtn')
 let jarvisHome = document.querySelector('#Oval')
 let siriHome = document.querySelector('#SiriWave')
 
-micbutton.addEventListener("click",(e) => {
-  // eel.playAssistantSound();
+async function playSound() {
+   await eel.playAssistantSound()();
+   
+}
+micbutton.addEventListener("click",() => {
+  playSound()
   jarvisHome.setAttribute("hidden", "hidden")
   siriHome.style.opacity = 1;
 })
